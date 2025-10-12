@@ -1,0 +1,249 @@
+/* FONTES IMPORTADAS */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400&display=swap');
+
+/* === ESTRUTURA GERAL === */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: brown;
+    /* CORREÇÃO DA MARGEM: Adiciona um espaço no topo do corpo para a navbar não cobrir o conteúdo */
+    padding-top: 75px; 
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px 100px 20px; /* Reduzido o padding superior pois já está no body */
+}
+
+section {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* === TÍTULOS E TEXTOS === */
+h1, h2, h3, h4, .section-title {
+    font-family: 'Lora', serif;
+}
+
+.title {
+    background-color: brown;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 36px;
+    margin-top: 38px;
+}
+
+header p {
+    color: #ffffff;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    color: #333;
+    text-align: center;
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* === NAVBAR MODERNIZADA COM EFEITOS === */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 10px; /* Aumentado padding para dar mais espaço */
+    text-align: center;
+    background-color: rgba(85, 3, 3, 0.5); /* Cor #550303 com transparência */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: bold;
+    margin: 0 15px;
+    padding: 5px 10px; /* Adiciona área de clique */
+    border-radius: 5px;
+    /* EFEITO DE TRANSIÇÃO SUAVE */
+    transition: all 0.3s ease;
+}
+
+/* EFEITO DE BRILHO BRANCO AO PASSAR O MOUSE */
+nav ul li a:hover {
+    color: #ffffff;
+    transform: scale(1.1); /* Efeito de zoom sutil */
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.9); /* O brilho branco */
+}
+
+/* === IMAGENS === */
+.image-container {
+    text-align: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* === CARDs === */
+.card-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid brown;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card__content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card h4 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.card p {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #666;
+}
+
+.card .price {
+    font-weight: bold;
+    color: #27ae60;
+    margin-bottom: 15px;
+    margin-top: auto;
+}
+
+.card button {
+    background-color: #550303;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.card button:active {
+    transform: scale(0.98);
+    background-color: #a53125;
+}
+
+/* === CARRINHO DE COMPRAS === */
+/* ... (código do carrinho, já está correto) ... */
+.carrinho { position: fixed; top: 0; right: -400px; width: 380px; height: 100%; background-color: #fdfdfd; box-shadow: -5px 0 15px rgba(0,0,0,0.2); display: flex; flex-direction: column; z-index: 2000; transition: right 0.4s ease-in-out; }
+.carrinho.is-open { right: 0; }
+.carrinho__header { display: flex; justify-content: space-between; align-items: center; padding: 15px; background-color: #550303; color: white; }
+.carrinho__header h3 { margin: 0; }
+.carrinho__fechar-btn { background: none; border: none; color: white; font-size: 2rem; cursor: pointer; }
+.carrinho__itens { flex-grow: 1; overflow-y: auto; padding: 15px; color: #333; }
+.carrinho-item { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.9rem; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+.carrinho-item span:last-child { font-weight: bold; }
+.carrinho__footer { padding: 15px; border-top: 2px solid #ddd; }
+.carrinho__total { display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px; color: #333; }
+.carrinho__finalizar-btn { width: 100%; padding: 15px; background-color: #25D366; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
+
+/* === BOTÕES FLUTUANTES === */
+.abrir-carrinho-btn { position: fixed; bottom: 25px; right: 25px; z-index: 1500; width: auto; height: 55px; border-radius: 50px; padding: 0 20px; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 1rem; font-weight: bold; background-color: #550303; color: white; border: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); cursor: pointer; transition: transform 0.2s ease; }
+.abrir-carrinho-btn:hover { transform: scale(1.05); }
+
+/* CORREÇÃO DO BOTÃO "VOLTAR AO TOPO" (CILINDRO) */
+.cilindro-topo-btn {
+    position: fixed;
+    bottom: 25px;
+    left: 25px; /* Colocado na esquerda */
+    z-index: 1500;
+    width: 60px;
+    height: 60px;
+    background-color: #550303;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* REGRAS DE VISIBILIDADE */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+.cilindro-topo-btn:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
+.cilindro-topo-btn:active { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+/* CLASSE QUE O JS ADICIONA PARA MOSTRAR O BOTÃO */
+.cilindro-topo-btn.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.cilindro-topo-btn::before { content: ''; position: absolute; top: -4px; left: 0; width: 100%; height: 100%; background-color: #8b0000; border-radius: 50%; z-index: -1; }
+.cilindro-topo-btn::after { content: ''; position: absolute; bottom: -7px; left: 0; width: 100%; height: 100%; background-color: #400000; border-radius: 50%; z-index: -2; }
+
+/* === FOOTER === */
+/* ... (código do footer, já está correto) ... */
+.footer { background-color: #550303; color: #f0f0f0; padding: 40px 20px; text-align: center; }
+.footer__container { max-width: 1200px; margin: 0 auto 30px auto; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
+.footer__coluna { flex: 1; min-width: 250px; }
+.footer__coluna h4 { margin-bottom: 15px; text-transform: uppercase; color: white; }
+.footer__coluna p { font-size: 0.9rem; line-height: 1.6; color: #ccc; }
+.footer__copyright { border-top: 1px solid #6a1a1a; padding-top: 20px; font-size: 0.8rem; color: #aaa; }
+
+/* === RESPONSIVO === */
+@media (max-width: 720px) {
+    nav ul { flex-direction: column; align-items: center; gap: 10px; }
+}
