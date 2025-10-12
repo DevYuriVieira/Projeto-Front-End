@@ -23,13 +23,11 @@ Acesse a versão online e interaja com o cardápio:
 
 ➡️ **[https://devyurivieira.github.io/Projeto-Front-End/](https://devyurivieira.github.io/Projeto-Front-End/)**
 
-![GIF de Demonstração do Projeto](https://i.imgur.com/e5VwL9i.gif)
-*Demonstração das animações, responsividade e funcionalidade do carrinho.*
-
 ---
 
 ## ✨ Funcionalidades / Features
 
+-   **Slider de Destaques Automático**: Um carrossel no topo da página que exibe imagens dos pratos de forma dinâmica.
 -   **Interface Moderna**: Design limpo e hierarquia visual clara.
 -   **Interatividade Total**: Cards com animações de `hover`, entrada suave ao rolar (`scroll reveal`) e navegação com *smooth scroll*.
 -   **Carrinho de Compras Funcional**: Adiciona itens, calcula o valor total em tempo real e abre para visualização.
@@ -40,6 +38,7 @@ Acesse a versão online e interaja com o cardápio:
 <details>
 <summary>🇬🇧 English Version</summary>
 
+-   **Automatic Hero Slider**: A carousel at the top of the page that dynamically showcases featured dishes.
 -   **Modern Interface**: Clean design and clear visual hierarchy.
 -   **Full Interactivity**: Cards with `hover` animations, smooth scroll reveal on entry, and smooth scrolling navigation.
 -   **Functional Shopping Cart**: Adds items, calculates the total in real-time, and opens for viewing.

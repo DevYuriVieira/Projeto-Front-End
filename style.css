@@ -8,7 +8,7 @@ body {
     padding: 0;
     background-color: brown;
     /* CORREÇÃO DA MARGEM: Adiciona um espaço no topo do corpo para a navbar não cobrir o conteúdo */
-    padding-top: 75px; 
+    padding-top: 40px; 
 }
 
 main {
@@ -246,4 +246,46 @@ nav ul li a:hover {
 /* === RESPONSIVO === */
 @media (max-width: 720px) {
     nav ul { flex-direction: column; align-items: center; gap: 10px; }
+}
+/* SLIDER AUTOMÁTICO (USA AS IMAGENS QUE VOCÊ JÁ TEM) */
+
+.slider-simples {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    
+    /* Animação que troca as imagens */
+    animation: slide-simples 15s infinite; /* 15s de duração, repete para sempre */
+}
+
+/* SLIDER AUTOMÁTICO (ATUALIZADO PARA SUAS 4 NOVAS IMAGENS) */
+
+.slider-simples {
+    width: 100%;
+    height: 550px;
+    background-size: cover;
+    background-position: center;
+    
+    /* Duração aumentada para 20s (5s por imagem) */
+    animation: slide-simples 20s infinite; 
+}
+
+/* Animação que troca as 4 imagens */
+@keyframes slide-simples {
+    /* 0% a 25%: Imagem 1 */
+    0%   { background-image: url('slider1.jpeg'); }
+    25%  { background-image: url('slider1.jpeg'); }
+
+    /* 25% a 50%: Imagem 2 */
+    26%  { background-image: url('slider2.jpg'); }
+    50%  { background-image: url('slider2.jpg'); }
+
+    /* 50% a 75%: Imagem 3 */
+    51%  { background-image: url('slider3.jpg'); }
+    75%  { background-image: url('slider3.jpg'); }
+
+    /* 75% a 100%: Imagem 4 */
+    76%  { background-image: url('slider4.jpg'); }
+    100% { background-image: url('slider4.jpg'); }
 }
